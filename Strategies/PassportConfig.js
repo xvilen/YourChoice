@@ -29,15 +29,26 @@ passport.use(
 
       let user = await usersModel.findOne({ GoogleId: sub });
       if (user) {
+        console.log("user mil gaya google");
         done(null, user);
       } else {
-        user = await usersModel.create({
-          GoogleId: sub,
-          username: email,
-          name,
-          img: picture,
-        });
-        done(null, user);
+        user = await usersModel.findOne({ username: email });
+        if (user) {
+          user.GoogleId = sub;
+          user.img = picture;
+          await user.save();
+          done(null, user);
+        } else {
+          user = await usersModel.create({
+            GoogleId: sub,
+            username: email,
+            name,
+            img: picture,
+          });
+          console.log("user nahi mil gaya");
+
+          done(null, user);
+        }
       }
     }
   )

@@ -17,7 +17,7 @@ var AuthRouter = require("./routes/authRouts");
 
 var app = express();
 // const sessionStore = new MongoStore({
-//   mongoUrl: process.env.MONGO_URL,
+//   mongoUrl: process.env.MONGO_URL2,
 //   collectionName: "session",
 // });
 app.use(
