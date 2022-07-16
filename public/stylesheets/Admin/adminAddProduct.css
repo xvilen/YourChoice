@@ -1,0 +1,112 @@
+aside > form {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+aside form > div {
+  width: 45%;
+  height: 50px;
+  max-height: 100px;
+  box-shadow: 1px 1px 3px 1px #000;
+
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+}
+aside form > .cat {
+  height: 130px;
+}
+aside form > div > input {
+  width: 90%;
+  height: 90%;
+  padding: 5px;
+}
+aside form > div > input[type="text"] {
+  border: none;
+  outline: none;
+}
+::-webkit-file-upload-button {
+  width: 100px;
+  height: 30px;
+  color: white;
+  background: red;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+aside form > div > label {
+  position: absolute;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  background-color: white;
+  top: -11px;
+  left: 45px;
+}
+aside form > .cat input[type="checkbox"] {
+  display: none;
+}
+.catcont {
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 15px;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+.catcont::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+.catcont::-webkit-scrollbar-thumb {
+  background: none;
+}
+.catcont::-webkit-scrollbar {
+  width: 0.1px;
+}
+
+.catcont small {
+  padding: 5px;
+  box-shadow: 0px 2px 5px #000;
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+aside form > .cat input[type="checkbox"]:checked ~ small {
+  background: #e91e63;
+  background: #0f0;
+  box-shadow: 0px 2px 10px #0f0;
+  color: white;
+  border: none;
+}
+.addcat {
+  box-shadow: 1px 1px 3px 1px #000;
+}
+.addcat input {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+}
+.addcat button {
+  width: 40px;
+  height: 100%;
+  margin-left: 3px;
+  background: #e91e63;
+  border: none;
+  color: wheat;
+}
+aside form > input[type="submit"] {
+  width: 30%;
+  height: 50px;
+  background: #e91e63;
+  box-shadow: 0p 2px 20px #0f0;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: white;
+}

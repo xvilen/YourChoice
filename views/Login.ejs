@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="/javascripts/fontawesome.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/Login.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/backside.css" />
+    <link rel="stylesheet" href="/stylesheets/universal.css" />
+    <title>YourChoice</title>
+  </head>
+  <body>
+    <i class="on-off fa-solid fa-toggle-off"></i>
+    <div class="container">
+      <nav>
+        <div class="navLeft">
+          <div class="icon"><i class="fa-solid fa-bars"></i></div>
+          <h2>
+            <a href="/">YOUR CHOICE </a>
+          </h2>
+        </div>
+        <div class="navMid">
+          <a href="/">
+            <div class="navitem">Home</div>
+          </a>
+          <a href="/product">
+            <div class="navitem">Shop</div>
+          </a>
+          <a href="">
+            <div class="navitem">Blog</div>
+          </a>
+          <a href="">
+            <div class="navitem">Contact</div>
+          </a>
+        </div>
+        <div class="navRight">
+          <div class="cart">
+            <div class="icon">
+              <i class="fa-solid nav-ic fa-bag-shopping"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="Landing-Screen">
+        <div class="Backside-card-body">
+          <div class="Backside-card">
+            <div class="Backside-card-Left cursor">
+              <h5 id="pagelocation">YOUR CHOICE</h5>
+            </div>
+            <div class="Backside-card-Mid cursor">
+              <h1>LOGIN</h1>
+            </div>
+            <div class="Backside-card-Right">
+              <div class="nextproduct"></div>
+            </div>
+          </div>
+        </div>
+        <div class="main-body">
+          <div class="card-body">
+            <div class="card">
+              <div class="button">
+                <div class="button-cont">
+                  <button class="login-btn">Login</button
+                  ><button class="signup-btn active-btn">Sign Up</button>
+                </div>
+              </div>
+              <div class="login">
+                <form action="/auth/login" method="post">
+                  <input type="text" placeholder="EMAIL" name="username" />
+                  <input
+                    type="password"
+                    placeholder="PASSWORD"
+                    name="password"
+                  />
+                  <button type="submit">Log in</button>
+                </form>
+              </div>
+              <div class="signup">
+                <form action="/auth/signup" method="post">
+                  <input type="text" placeholder="NAME" name="name" />
+                  <input type="text" placeholder="EMAIL" name="username" />
+                  <input type="number" placeholder="PHONE NO." name="number" />
+                  <input
+                    type="password"
+                    placeholder="PASSWORD"
+                    name="password"
+                  />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+              <div class="icon-cont">
+                <a href="/auth/google" class="icon">
+                  <h3>Google</h3>
+                  <i class="fa-brands fa-google"></i>
+                </a>
+                <div class="icon">
+                  <h3>Facebook</h3>
+                  <i class="fa-brands fa-facebook-f"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let login = document.querySelector(".login");
+      let signup = document.querySelector(".signup");
+      let loginbtn = document.querySelector(".login-btn");
+      let signupbtn = document.querySelector(".signup-btn");
+      loginbtn.addEventListener("click", () => {
+        loginbtn.classList.add("active-btn");
+        signupbtn.classList.remove("active-btn");
+        signup.style.display = "none";
+        login.style.display = "initial";
+      });
+      signupbtn.addEventListener("click", () => {
+        signupbtn.classList.add("active-btn");
+        loginbtn.classList.remove("active-btn");
+        login.style.display = "none";
+        signup.style.display = "initial";
+      });
+      let pagelocation = location.pathname.toLowerCase();
+
+      document.getElementById("pagelocation").innerText += pagelocation;
+    </script>
+  </body>
+</html>

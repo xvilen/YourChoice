@@ -1,0 +1,64 @@
+<div class="profile-cont">
+    <div class="cross">
+      <i class="fa-solid fa-xmark"></i>
+    </div><%if(user){%>
+    <div class="profile-box">
+      <%if(user.isAdmin===true){%>
+        <a class="admin" href="/admin"><img src="/htmlimg/admin.png" alt=""></a>
+                <%}%>
+      <img src="<%=user.img%>" alt="">
+      <h6>hey,</h6>
+      <h2><%=user.name%></h2>
+    </div>
+  <%}else{%>
+    <div class="profile-box">
+<h2>please log in</h2>
+  </div>
+<%}%>
+    <div class="navigation">
+<div>
+<a href="/user/profile" class="item">
+<i class="fa-solid fa-user"></i><h5>profile</h5>
+</a>
+</div>
+<div>
+<a class="item" href="/">
+  <i class="fa-solid fa-house"></i><h5>Home Page</h5>
+</a>
+</div>
+<div>
+<a class="item" href="/cart/usercart">
+  <i class="fa-solid fa-bag-shopping"></i></i><h5>My Cart</h5>
+</a>
+</div>
+<div>
+<a class="item" href="/user/favorite">
+  <i class="fa-solid fa-heart"></i><h5>favorite</h5>
+</a>
+</div>
+<div>
+<a class="item" href="/user/order">
+  <i class="fa-solid fa-clipboard-list"></i></i><h5>Orders</h5>
+</a>
+</div>
+<div>
+<a class="item" href="/user/notification">
+  <i class="fa-solid fa-bell"></i><h5>Notifications</h5>
+</a>
+</div>
+<hr>
+<div>
+<%if(user){%>
+  <a class="item" href="/auth/logout">
+    <i class="fa-solid fa-arrow-right-from-bracket"></i><h5>Sign Out</h5>
+  </a>
+  <%}else{%>
+    <a class="item" href="/auth/Login">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i><h5>Sign in</h5>
+    </a>
+  <%}%>
+
+</div>
+    </div>
+    
+  </div>

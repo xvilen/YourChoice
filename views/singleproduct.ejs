@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/javascripts/fontawesome.js"></script>
+    <script src="/javascripts/swipper.js"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="/stylesheets/swipper.css" />
+
+    <link rel="stylesheet" href="/stylesheets/singleproduct.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/backside.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link rel="stylesheet" href="/stylesheets/newsbar.css" />
+    <link rel="stylesheet" href="/stylesheets/universal.css" />
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <title>YourChoice</title>
+  </head>
+  <body>
+    <i class="on-off fa-solid fa-toggle-off"></i>
+    <%- include('Header/Profile')%>
+    <div class="container">
+      <%- include('Header/Navbar')%>
+      <div class="Landing-Screen">
+        <div class="Backside-card-body">
+          <div class="Backside-card">
+            <div class="Backside-card-Left cursor">
+              <h5 id="pagelocation">YOUR CHOICE</h5>
+
+            </div>
+            <div class="Backside-card-Mid cursor">
+              <h1>Product Details</h1>
+            </div>
+            <div class="Backside-card-Right">
+              <div class="nextproduct">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-body">
+          <a class="scroll-to-down" href="#footer">
+            <div class="scroll-body cursor">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              <h5>Scroll To Down</h5>
+            </div>
+          </a>
+          <div class="card-body">
+            <form action="/cart/addcart" onsubmit="validateform()" method="get">
+              <input type="text" value="<%=product.title%>" name="ProductName" hidden readonly required>
+              <input type="text" value="<%=product.img[0]%>" name="ProductImg" hidden readonly required>
+              <input type="text" value="<%=product.price%>" name="ProductPrice" hidden readonly required>
+              <input type="text" value="<%=product._id%>" name="ProductId" hidden readonly required>
+            <div class="card">
+              <div class="card-disc">
+                <div class="card-desk-container">
+                  <h1><%=product.title%></h1>
+                  <p style="overflow-y: scroll; height: 90px;">
+                    <%=product.desc%>
+                  </p>
+                  <div thumbsSlider="" class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <%product.img.map(img=>{%>
+                      <div class="swiper-slide">
+                        <img
+                          src="../images/uploads/<%=img%>"
+                        />
+                      </div>
+                    <%})%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-img-container">
+                <div class="card-img-box">
+                  <div class="card-img">
+                    <div
+                      style="
+                        --swiper-navigation-color: #fff;
+                        --swiper-pagination-color: #fff;
+                      "
+                      class="swiper mySwiper2"
+                    >
+                      <div class="swiper-wrapper">
+                        
+                        <%product.img.map(img=>{%>
+                          <div class="swiper-slide">
+                            <img
+                              src="../images/uploads/<%=img%>"
+                            />
+                          </div>
+                        <%})%>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <i class="swiper-button-next fa-solid fa-arrow-right-long"></i>
+
+                <i class="swiper-button-prev fa-solid fa-arrow-left-long"></i>
+              </div>
+            <div class="card-info">
+              <div class="review-cont">
+                <h4>Review :</h4>
+                <div class="review-box">
+                  <i class="cursor fa-solid fa-star"></i>
+                  <i class="cursor fa-solid fa-star"></i>
+                  <i class="cursor fa-solid fa-star"></i>
+                  <i class="cursor fa-solid fa-star"></i>
+                  <i class="cursor fa-solid fa-star"></i>
+                </div><small>4.5(244)</small>
+              </div>
+          
+
+<div class="color-cont">
+  <h4>Color :</h4>
+  <div class="color-chart">
+    <%product.color.map((color,index)=>{%>
+    <input type="radio" name="ProductColor" value="<%=color%>" id="color<%=index%>" required>
+    <label for="color<%=index%>" class="color-label">
+      <div class="color" style="background: <%=color%>"></div>
+    </label>    
+  <%})%>
+    </div>
+</div>
+<div class="size-chart-box">
+  <h4>Size :</h6>
+  <div class="size-chart">
+    <%product.size.map((size,index)=>{%>
+    <input type="radio" name="ProductSize" value="<%=size%>" id="size<%=index%>" required>
+    <label for="size<%=index%>" class="size cursor  ">
+      <%=size%>
+  </label>
+<%})%>
+  </div>
+</div>
+<div class="price-cont">
+  <h4>Price :</h6>
+  <div class="price-box">
+  <h3> RS <%=product.price%></h3>
+  
+  </div>
+</div>
+<button type="submit" class="cursor">Add To Cart <i style="color: yellow;" class="fa-solid nav-ic fa-bag-shopping"></i></button>
+</div>   
+            </div>
+          </form>
+              </div>
+            
+          <div class="social-button-body">
+            <div class="social-button cursor">
+              <h5>follow</h5>
+              <a href="">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%if(newArray.length>0){%>
+      <div class="products2">
+        <h1>RELEATED PRODUCTS</h1>
+      <div class="swiper mySwiper3">
+        <div class="swiper-wrapper swiper-wrapper-custom">
+          <%newArray.map(reletedProduct=>{%>
+          <div class="swiper-slide swipper2 product-card" >
+          
+            <div class="nav">
+              <a
+                class="icon"
+                href="/user/like/<%=product._id%>"
+              >
+                <i class="fa-solid fa-heart"></i>
+              </a>
+              <div class="icon">
+                <i class="fa-solid nav-ic fa-bag-shopping"></i>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product-background" style="background: rgb(<%=Math.round(250*Math.random())%>,<%=Math.round(250*Math.random())%>,<%=Math.round(250*Math.random())%>)">
+                <div class="product-background-circle"></div>
+              </div>
+              <div class="product-image">
+                <img src="../images/uploads/<%=reletedProduct.PngImg%>" alt="" />
+              </div>
+            </div>
+            <div class="product-info">
+              <h3><%=reletedProduct.title%></h3>
+              <h4>$<%=reletedProduct.price%></h4>
+              <a href="/product/singleproduct?id=<%=reletedProduct._id%>"
+                ><button>view <i class="fa-solid fa-expand"></i></button
+              ></a>
+            </div>
+            
+          </div>
+        <%})%>
+        </div>
+        <div class="swiper-pagination-3"></div>
+      </div>
+    </div>
+  <%}%>
+  
+  <div class="newslatter">
+    <h1>NEWSLATTER</h1>
+    <h4>Get update from your favorite products</h4>
+    <form action="/newsemail" method="post">
+      <input type="text" placeholder="enter your email" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <footer class="Footer" id="footer">
+    <div class="footer-info">
+      <h2>MUHAFIZ.</h2>
+      <p>
+        There are many variations of passages of Lorem Ipsum available, but
+        the majority have suffered alteration in some form, by injected
+        humour, or randomised words which don’t look even slightly
+        believable.
+      </p>
+      <div class="social-icon">
+        <a href="">
+          <i
+            style="color: #3b5999"
+            class="fa-brands fa-facebook-square"
+          ></i>
+        </a>
+        <a href="">
+          <i
+            style="color: #e4405f"
+            class="fa-brands fa-instagram-square"
+          ></i>
+        </a>
+        <a href="">
+          <i style="color: #55acee" class="fa-brands fa-twitter-square"></i>
+        </a>
+        <a href="">
+          <i
+            style="color: #e60023"
+            class="fa-brands fa-pinterest-square"
+          ></i>
+        </a>
+      </div>
+    </div>
+    <div class="Usefull-Links">
+      <h2>Usefull Links</h2>
+      <ul>
+        <li>
+          <a href="/"> Home </a>
+        </li>
+        <li>
+          <a href="/cart/usercart"> Cart </a>
+        </li>
+        <li>
+          <a href="/product?category=Men"> Man Fashion </a>
+        </li>
+        <li>
+          <a href="/product?category=Women"> Woman Fashion </a>
+        </li>
+        <li>
+          <a href="/product?category=Accessories"> Accessories </a>
+        </li>
+        <li>
+          <a href="/product?category=Accessories"> My Account </a>
+        </li>
+        <li>
+          <a href="/product?category=Accessories"> Order Tracking </a>
+        </li>
+        <li>
+          <a href="/product?category=Accessories"> Wishlist </a>
+        </li>
+        <li>
+          <a href="/product?category=Accessories"> Wishlist </a>
+        </li>
+        <li>
+          <a href="/product?category=Accessories"> Terms </a>
+        </li>
+      </ul>
+    </div>
+    <div class="Contact">
+      <h2>Contact</h2>
+      <div>
+        <i class="fa-solid fa-location-pin"></i>
+        622 Dixie Path , South Tobinchester 98336
+      </div>
+      <div><i class="fa-solid fa-phone"></i>+91 7869073804</div>
+      <div><i class="fa-solid fa-at"></i>Muhafiz.ahmed.sa@gmail.com</div>
+      <img src="https://i.ibb.co/Qfvn4z6/payment.png" />
+    </div>
+  </footer>
+    </div>
+    <script>
+      var swiper3 = new Swiper(".mySwiper3", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        freeMode: true,
+        keyboard: {
+          enabled: true,
+        },
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination-3",
+          clickable: true,
+        },
+      });
+    
+     
+    </script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
+const validateform=()=>{
+
+}
+let profile=document.querySelector(".profile-cont")
+
+profile.addEventListener("click",function () {
+  profile.classList.toggle("profile-active")
+  
+})
+document.querySelector("#profile-cont-off").addEventListener("click",function () {
+  profile.classList.toggle("profile-active")
+
+})
+
+let pagelocation = location.pathname.toLowerCase();
+
+document.getElementById("pagelocation").innerText += pagelocation;
+    </script>
+   
+  </body>
+</html>

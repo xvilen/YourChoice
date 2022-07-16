@@ -1,0 +1,188 @@
+.main-body {
+  width: 100%;
+  height: 36%;
+  display: flex;
+}
+
+.main-body .card-body {
+  flex: 12;
+  background: none;
+  position: relative;
+}
+.card {
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  bottom: 25px;
+  background: none;
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 23px;
+}
+.card .persnal-info-cont {
+  box-shadow: inset 0px 0px 16px 4px rgba(255, 255, 255, 1);
+  box-shadow: 5px 18px 22px 4px rgba(0, 0, 0, 0.5);
+  flex: 4;
+  height: 95%;
+  background: #ffebc2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+
+.persnal-info-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+.persnal-info-box input {
+  width: 45%;
+  height: 20%;
+  background: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+}
+.persnal-info-box button {
+  height: 40px;
+  font-size: 15px;
+  background-color: black;
+  border-radius: 50px;
+  color: yellow;
+  width: 110px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.persnal-info-box a {
+  width: 45%;
+  text-align: center;
+}
+.address-info-cont {
+  box-shadow: inset 0px 0px 16px 4px rgba(255, 255, 255, 1);
+  box-shadow: 5px 18px 22px 4px rgba(0, 0, 0, 0.5);
+  flex: 4;
+  height: 95%;
+  background: #ffebc2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  padding: 20px 0px;
+  display: none;
+}
+.address-info-cont .input-container {
+  width: 45%;
+  height: 25%;
+}
+.address-info-cont form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+.address-info-cont .input-container {
+  width: 45%;
+  height: 20%;
+
+  position: relative;
+}
+.input-container label {
+  position: absolute;
+  top: -13px;
+  font-size: 12px;
+}
+.input-container input {
+  width: 100%;
+  height: 90%;
+  background: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+}
+.address-info-cont form button {
+  height: 40px;
+  font-size: 15px;
+  background-color: black;
+  border-radius: 50px;
+  color: yellow;
+  width: max-content;
+}
+.address-type {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.radio-box-cont {
+  display: flex;
+  width: 84%;
+  justify-content: space-evenly;
+}
+.card .setting-cont {
+  flex: 1;
+  height: 95%;
+  background: #ffebc2;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  box-shadow: inset 0px 0px 16px 4px rgba(255, 255, 255, 1),
+    5px 18px 22px 4px rgba(0, 0, 0, 0.5);
+}
+.setting {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.setting .menu-item {
+  width: 87%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.acc-setting,
+.menu-item .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu-item .item {
+  height: 50px;
+  position: relative;
+  border-radius: 20px;
+}
+.menu-item .item:hover {
+  box-shadow: 1px 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-item .item::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  bottom: -8px;
+  filter: blur(0.5px);
+}

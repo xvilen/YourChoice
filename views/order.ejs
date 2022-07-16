@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/javascripts/fontawesome.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+      integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link rel="stylesheet" href="/stylesheets/order.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/backside.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link rel="stylesheet" href="/stylesheets/newsbar.css" />
+    <link rel="stylesheet" href="/stylesheets/universal.css" />
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+
+    <title>YourChoice</title>
+  </head>
+  <body>
+    <i class="on-off fa-solid fa-toggle-off"></i>
+    <%- include('Header/Profile')%>
+    <div class="container">
+      <%- include('Header/Navbar')%>
+      <div class="Landing-Screen">
+        <div class="Backside-card-body">
+          <div class="Backside-card">
+            <div class="Backside-card-Left cursor">
+              <h5 id="pagelocation">YOUR CHOICE</h5>
+            </div>
+            <div class="Backside-card-Mid cursor">
+              <h1>CHECKOUT PAGE</h1>
+            </div>
+            <div class="Backside-card-Right">
+              <div class="nextproduct"></div>
+            </div>
+          </div>
+        </div>
+        <div class="main-body">
+          <div class="card-body">
+            <div class="card">
+              <div class="checkout-product-cont">
+                <h2>PRODUCTS</h2>
+                <div class="checkout-product-box">
+                  <div class="checkout-product" id="">
+                    <img src="" alt="" />
+                    <h2>dfdsf</h2>
+                    <div class="product-colors">
+                      <h2>color:</h2>
+                      <div class="color" style="background: tan"></div>
+                    </div>
+                    <div class="product-size">
+                      <h2>SIZE:</h2>
+                      <div class="size"></div>
+                    </div>
+
+                    <div class="product-price">
+                      <i class="fa-solid fa-indian-rupee-sign"></i>
+                      <h2>23</h2>
+                    </div>
+                    <div class="delivery-status">
+                      <h3>Delivery Status</h3>
+                      <div class="status-cont"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="newslatter">
+        <h1>NEWSLATTER</h1>
+        <h4>Get update from your favorite products</h4>
+        <form action="/newsemail" method="post">
+          <input type="text" placeholder="enter your email" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <footer class="Footer" id="footer">
+        <div class="footer-info">
+          <h2>MUHAFIZ.</h2>
+          <p>
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humour, or randomised words which don’t look even slightly
+            believable.
+          </p>
+          <div class="social-icon">
+            <a href="">
+              <i
+                style="color: #3b5999"
+                class="fa-brands fa-facebook-square"
+              ></i>
+            </a>
+            <a href="">
+              <i
+                style="color: #e4405f"
+                class="fa-brands fa-instagram-square"
+              ></i>
+            </a>
+            <a href="">
+              <i style="color: #55acee" class="fa-brands fa-twitter-square"></i>
+            </a>
+            <a href="">
+              <i
+                style="color: #e60023"
+                class="fa-brands fa-pinterest-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="Usefull-Links">
+          <h2>Usefull Links</h2>
+          <ul>
+            <li>
+              <a href="/"> Home </a>
+            </li>
+            <li>
+              <a href="/cart/usercart"> Cart </a>
+            </li>
+            <li>
+              <a href="/product?category=Men"> Man Fashion </a>
+            </li>
+            <li>
+              <a href="/product?category=Women"> Woman Fashion </a>
+            </li>
+            <li>
+              <a href="/product?category=Accessories"> Accessories </a>
+            </li>
+            <li>
+              <a href="/product?category=Accessories"> My Account </a>
+            </li>
+            <li>
+              <a href="/product?category=Accessories"> Order Tracking </a>
+            </li>
+            <li>
+              <a href="/product?category=Accessories"> Wishlist </a>
+            </li>
+            <li>
+              <a href="/product?category=Accessories"> Wishlist </a>
+            </li>
+            <li>
+              <a href="/product?category=Accessories"> Terms </a>
+            </li>
+          </ul>
+        </div>
+        <div class="Contact">
+          <h2>Contact</h2>
+          <div>
+            <i class="fa-solid fa-location-pin"></i>
+            622 Dixie Path , South Tobinchester 98336
+          </div>
+          <div><i class="fa-solid fa-phone"></i>+91 7869073804</div>
+          <div><i class="fa-solid fa-at"></i>Muhafiz.ahmed.sa@gmail.com</div>
+          <img src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        </div>
+      </footer>
+    </div>
+    <script>
+      const increment = async (action, id) => {
+        let quantitycode = document.getElementById(id);
+        let badge = document.querySelector(".badge");
+        quantity = await axios.get(`/cart/quantity?val=${action}&id=${id}`);
+        let res = quantity.data.quantities;
+        if (res.ProductQuantity > 0) {
+          quantitycode.innerHTML = `
+                    <img src="../images/uploads/${res.ProductImg}" alt="" />
+                    <h2>${res.ProductName}"</h2>
+                    <div class="product-colors">
+                      <h2>color:</h2>
+                      <div
+                        class="color"
+                        style="background: ${res.ProductColor}"
+                      ></div>
+                    </div>
+                    <div class="product-size">
+                      <h2>SIZE:</h2>
+                      <div class="size">${res.ProductSize}</div>
+                    </div>
+                    <div class="product-quantity">
+                      <i
+                        class="fa-solid fa-plus"
+                        onclick="increment('inc','${res._id}')"
+                      ></i>
+                      <div class="size">${res.ProductQuantity}</div>
+                      <i
+                        class="fa-solid fa-minus"
+                        onclick="increment('dec','${res._id}')"
+                      ></i>
+                    </div>
+                    <div class="product-price">
+                      <i class="fa-solid fa-indian-rupee-sign"></i>
+                      <h2>${res.ProductPrice}</h2>
+                    </div>
+                  `;
+        } else {
+          quantitycode.parentElement.removeChild(quantitycode);
+          badge.innerText -= 1;
+        }
+
+        let resquantity = quantity.data.totalprice;
+        let totalprice = document.querySelector(".checkout-price").children;
+        totalprice[1].children[1].innerHTML = ` <i class="fa-solid fa-indian-rupee-sign"></i>${resquantity.totalprice}`;
+        totalprice[4].children[1].innerHTML = ` <i class="fa-solid fa-indian-rupee-sign"></i>${resquantity.totalprice}`;
+        document.getElementById(
+          "navcart"
+        ).innerHTML = ` <i class="fa-solid fa-indian-rupee-sign"></i>${resquantity.totalprice}`;
+      };
+      let profile = document.querySelector(".profile-cont");
+
+      profile.addEventListener("click", function () {
+        profile.classList.toggle("profile-active");
+      });
+      document
+        .querySelector("#profile-cont-off")
+        .addEventListener("click", function () {
+          profile.classList.toggle("profile-active");
+        });
+    </script>
+  </body>
+</html>

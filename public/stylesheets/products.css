@@ -1,0 +1,167 @@
+button {
+  width: 130px;
+  height: 50px;
+  background: black;
+  color: yellow;
+  border-radius: 15px;
+}
+.Landing-Screen {
+  height: 45%;
+  background: none;
+  display: flex;
+  flex-direction: column;
+}
+.Landing-Screen .Backside-card-body {
+  background: #fdb815;
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  margin-top: 20px;
+  -webkit-box-shadow: inset 0px 0px 57px -13px rgba(253, 145, 30, 1);
+  -moz-box-shadow: inset 0px 0px 57px -13px rgba(253, 145, 30, 1);
+  box-shadow: inset 0px 0px 57px -13px rgba(253, 145, 30, 1);
+}
+
+.main-body {
+  width: 100%;
+  height: max-content;
+  display: flex;
+}
+.main-body .scroll-to-down {
+  flex: 1;
+  position: relative;
+}
+.scroll-to-down .scroll-body,
+.social-button {
+  display: flex;
+  transform: rotate(270deg);
+  width: max-content;
+  position: absolute;
+  top: 80px;
+  right: -25px;
+}
+.scroll-to-down .scroll-body > a,
+.social-button > a {
+  padding: 0px 10px;
+}
+.main-body .card-body {
+  flex: 12;
+  background: transparent;
+  position: relative;
+  height: max-content;
+}
+.main-body .card-body .card {
+  width: 100%;
+  height: max-content;
+  position: relative;
+  bottom: 150px;
+  background: transparent;
+  border-radius: 50px;
+}
+.product-card-cont {
+  margin-top: 20px;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+.card .sortcont {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sortcont select {
+  padding: 4px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background: #fbfaf88a;
+}
+
+.card .product-card {
+  height: 400px;
+  width: 31%;
+  background: #ffebc2;
+  border-radius: 25px;
+
+  -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.5),
+    inset 2px 1px 35px 12px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.5),
+    inset 2px 1px 35px 12px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.5),
+    inset 2px 1px 35px 12px rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card .nav {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 11%;
+}
+.nav .icon {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #feeec3;
+  border-radius: 50%;
+  background: radial-gradient(#feeec3, #fff6db);
+}
+.product-card .product {
+  width: 90%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.product .product-background {
+  width: 80%;
+  height: 40%;
+
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.product-background .product-background-circle {
+  height: 110%;
+  width: 100px;
+  background: aliceblue;
+  border-radius: 50%;
+  outline: 4px solid yellow;
+}
+.product .product-image {
+  width: 90%;
+  height: 60%;
+}
+.product-image img {
+  width: 100%;
+  height: 150%;
+
+  position: relative;
+  bottom: 80px;
+}
+.product-card .product-info {
+  width: 90%;
+  height: 21%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.main-body .social-button-body {
+  flex: 1;
+  position: relative;
+}
+/* **************************************** */

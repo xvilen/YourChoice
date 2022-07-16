@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/Admin/adminAddProduct.css" />
+    <link rel="stylesheet" href="/stylesheets/Admin/AdminSidemenu.css" />
+
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile-cont">
+        <div class="cross">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="profile-box">
+          <h2>YourChoice</h2>
+        </div>
+        <div class="navigation">
+          <div>
+            <a href="/user/profile" class="item">
+              <img src="/htmlimg/dashboard.png" alt="" />
+              <h5>Dashboard</h5>
+            </a>
+          </div>
+          <div>
+            <a class="item" href="/">
+              <img src="/htmlimg/cargo.png" alt="" />
+              <h5>Orders</h5>
+            </a>
+          </div>
+          <div>
+            <a class="item" href="/Admin/AddProduct">
+              <img src="/htmlimg/delivery-box.png" alt="" />
+              <h5>Products</h5>
+            </a>
+          </div>
+          <div>
+            <a
+              style="
+                background: #0f0;
+                box-shadow: 0px 2px 20px #0f0;
+                color: white;
+              "
+              class="item"
+              href="/cart/usercart"
+            >
+              <img src="/htmlimg/add.png" alt="" />
+              <h5>Add Products</h5>
+            </a>
+          </div>
+          <div>
+            <a class="item" href="/user/favorite">
+              <img src="/htmlimg/rating.png" alt="" />
+              <h5>Customers</h5>
+            </a>
+          </div>
+          <div>
+            <a class="item" href="/user/order">
+              <img src="/htmlimg/analysis.png" alt="" />
+              <h5>Analytics</h5>
+            </a>
+          </div>
+
+          <hr />
+          <div>
+            <a class="item" href="/logout">
+              <img src="htmlimg/check-out.png" alt="" />
+              <h5>Sign Out</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <h1>Add New Products</h1>
+        <form
+          action="/product/addproduct"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div>
+            <label for="PngImg">PNG Image</label>
+            <input required type="file" name="PngImg" id="PngImg" />
+          </div>
+          <div>
+            <label for="img">Multple Image</label>
+            <input
+              required
+              type="file"
+              name="img"
+              id="img"
+              multiple="multiple"
+            />
+          </div>
+          <div>
+            <input
+              required
+              type="text"
+              name="title"
+              id="title"
+              placeholder=""
+            />
+            <label for="title">Title</label>
+          </div>
+          <div>
+            <input required type="text" name="desc" id="decs" />
+            <label for="decs">Description</label>
+          </div>
+          <div>
+            <input required type="text" name="price" id="price" />
+            <label for="price">Price</label>
+          </div>
+          <div class="cat">
+            <label>category</label>
+            <div id="catagorycont" class="catcont">
+              <label for="Men">
+                <input id="Men" type="checkbox" value="Men" name="category" />
+                <small> Men</small>
+              </label>
+              <label for="Women">
+                <input
+                  id="Women"
+                  type="checkbox"
+                  value="Women"
+                  name="category"
+                />
+                <small> Women</small>
+              </label>
+              <label for="Tshirt">
+                <input
+                  id="Tshirt"
+                  type="checkbox"
+                  value="Tshirt"
+                  name="category"
+                />
+                <small>Tshirt </small>
+              </label>
+              <label for="Shirt">
+                <input
+                  id="Shirt"
+                  type="checkbox"
+                  value="Shirt"
+                  name="category"
+                />
+                <small>Shirt</small>
+              </label>
+              <label for="Shoes">
+                <input
+                  id="Shoes"
+                  type="checkbox"
+                  value="Shoes"
+                  name="category"
+                />
+                <small>Shoes</small>
+              </label>
+              <label for="Dress">
+                <input
+                  id="Dress"
+                  type="checkbox"
+                  value="Dress"
+                  name="category"
+                />
+                <small> Dress</small>
+              </label>
+            </div>
+            <div class="addcat">
+              <input type="text" placeholder="Catagory" />
+              <button id="catagorybtn">add</button>
+            </div>
+          </div>
+          <div class="cat">
+            <label>color</label>
+            <div id="colorcont" class="catcont">
+              <label for="Black">
+                <input id="Black" type="checkbox" value="Black" name="color" />
+                <small>Black</small>
+              </label>
+              <label for="White">
+                <input id="White" type="checkbox" value="White" name="color" />
+                <small>White</small>
+              </label>
+              <label for="Blue">
+                <input id="Blue" type="checkbox" value="Blue" name="color" />
+                <small>Blue</small>
+              </label>
+              <label for="Yellow">
+                <input
+                  id="Yellow"
+                  type="checkbox"
+                  value="Yellow"
+                  name="color"
+                />
+                <small> Yellow</small>
+              </label>
+              <label for="Brown">
+                <input id="Brown" type="checkbox" value="Brown" name="color" />
+                <small> Brown</small>
+              </label>
+              <label for="Orange">
+                <input
+                  id="Orange"
+                  type="checkbox"
+                  value="Orange"
+                  name="color"
+                />
+                <small> Orange</small>
+              </label>
+            </div>
+            <div class="addcat">
+              <input type="text" placeholder="Color" />
+              <button id="colorbtn">add</button>
+            </div>
+          </div>
+          <div class="cat">
+            <label>Size</label>
+            <div id="sizecont" class="catcont">
+              <label for="6">
+                <input id="6" type="checkbox" value="6" name="size" />
+                <small> 6</small>
+              </label>
+              <label for="7">
+                <input id="7" type="checkbox" value="7" name="size" />
+                <small>7 </small>
+              </label>
+              <label for="8">
+                <input id="8" type="checkbox" value="8" name="size" />
+                <small>8 </small>
+              </label>
+              <label for="9">
+                <input id="9" type="checkbox" value="9" name="size" />
+                <small>9 </small>
+              </label>
+              <label for="10">
+                <input id="10" type="checkbox" value="10" name="size" />
+                <small>10 </small>
+              </label>
+              <label for="11">
+                <input id="11" type="checkbox" value="11" name="size" />
+                <small> 11</small>
+              </label>
+              <label for="S">
+                <input id="S" type="checkbox" value="S" name="size" />
+                <small>S </small>
+              </label>
+              <label for="M">
+                <input id="M" type="checkbox" value="M" name="size" />
+                <small>M </small>
+              </label>
+              <label for="L">
+                <input id="L" type="checkbox" value="L" name="size" />
+                <small>L</small>
+              </label>
+              <label for="XL">
+                <input id="XL" type="checkbox" value="XL" name="size" />
+                <small>XL </small>
+              </label>
+              <label for="XXL">
+                <input id="XXL" type="checkbox" value="XXL" name="size" />
+                <small> XXL</small>
+              </label>
+            </div>
+            <div class="addcat">
+              <input type="text" placeholder="size" />
+              <button id="sizebtn">add</button>
+            </div>
+          </div>
+          <input type="submit" value="submit" />
+        </form>
+      </aside>
+    </div>
+    <script>
+      let sizebtn = document.getElementById("sizebtn");
+      sizebtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        value = this.parentElement.children[0].value;
+        let parent = document.getElementById("sizecont");
+        value.length > 0 &&
+          (parent.innerHTML += `<label for="${value}">
+          <input id="${value}" checked type="checkbox" value="${value}" name="size" />
+          <small>${value} </small>
+          </label>`);
+        this.parentElement.children[0].value = "";
+      });
+      let colorbtn = document.getElementById("colorbtn");
+      colorbtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        value = this.parentElement.children[0].value;
+        let parent = document.getElementById("colorcont");
+        value.length > 0 &&
+          (parent.innerHTML += `<label for="${value}">
+          <input id="${value}" checked type="checkbox" value="${value}" name="color" />
+          <small>${value} </small>
+          </label>`);
+        this.parentElement.children[0].value = "";
+      });
+      let catagorybtn = document.getElementById("catagorybtn");
+      catagorybtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        value = this.parentElement.children[0].value;
+        let parent = document.getElementById("catagorycont");
+        value.length > 0 &&
+          (parent.innerHTML += `<label for="${value}">
+          <input id="${value}" checked type="checkbox" value="${value}" name="category" />
+          <small>${value} </small>
+          </label>`);
+        this.parentElement.children[0].value = "";
+      });
+    </script>
+  </body>
+</html>

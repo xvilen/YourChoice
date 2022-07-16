@@ -1,0 +1,93 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  height: 10%;
+}
+nav .icon {
+  padding: 10px;
+  border: 1px solid #feeec3;
+  border-radius: 50%;
+  background: radial-gradient(#feeec3, #fff6db);
+}
+.navLeft {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.navLeft h2 {
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: 900;
+}
+
+.navMid {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navMid .navitem {
+  font-weight: 900;
+  cursor: pointer;
+}
+.navMid .navitem:hover {
+  color: #eb7e28;
+}
+.navRight {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navRight .search {
+  background: none;
+  padding: 3px 4px;
+  border: 1px solid;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navRight .search input {
+  padding: 5px 5px;
+  width: 150px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 900;
+}
+.navRight .cart {
+  display: flex;
+  float: right;
+  cursor: pointer;
+  align-items: center;
+}
+.cart h4 {
+  margin-right: 20px;
+  font-weight: 900;
+}
+.cart .icon {
+  position: relative;
+}
+.icon .badge {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #eb7e28;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 25px;
+  left: 25px;
+  font-size: 14px;
+  font-weight: 800;
+}

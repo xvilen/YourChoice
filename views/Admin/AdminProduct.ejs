@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/Admin/adminProducts.css" />
+    <link rel="stylesheet" href="/stylesheets/Admin/AdminSidemenu.css" />
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile-cont">
+        <div class="cross">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="profile-box">
+          <h2>YourChoice</h2>
+        </div>
+        <div class="navigation">
+          <div>
+            <a href="/Admin/Dashboard" class="item">
+              <img src="/htmlimg/dashboard.png" alt="" />
+              <h5>Dashboard</h5>
+            </a>
+          </div>
+          <div>
+            <a class="item" href="/">
+              <img src="/htmlimg/cargo.png" alt="" />
+              <h5>Orders</h5>
+            </a>
+          </div>
+          <div>
+            <a
+              style="
+                background: #0f0;
+                box-shadow: 0px 2px 20px #0f0;
+                color: white;
+              "
+              class="item"
+              href="/Admin/Products"
+            >
+              <img src="/htmlimg/delivery-box.png" alt="" />
+              <h5>Products</h5>
+            </a>
+          </div>
+          <div>
+            <a class="item" href="/Admin/AddProduct">
+              <img src="/htmlimg/add.png" alt="" />
+              <h5>Add Products</h5>
+            </a>
+          </div>
+          <div>
+            <a class="item" href="/user/favorite">
+              <img src="/htmlimg/rating.png" alt="" />
+              <h5>Customers</h5>
+            </a>
+          </div>
+          <div>
+            <a class="item" href="/user/order">
+              <img src="/htmlimg/analysis.png" alt="" />
+              <h5>Analytics</h5>
+            </a>
+          </div>
+
+          <hr />
+          <div>
+            <a class="item" href="/logout">
+              <img src="htmlimg/check-out.png" alt="" />
+              <h5>Sign Out</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <h1>All Products</h1>
+        <table>
+          <thead>
+          <tr>
+            <th style="width: 5%;">NO.</th>
+            <th style="width: 10%;" >IMG</th>
+            <th style="width: 10%;">CATEGORY</th>
+            <th style="width: 15%;">PRODUCT NAME</th>
+            <th style="width: 10%;">SIZE</th>
+            <th style="width: 10%;">COLOR</th>
+            <th style="width: 10%;">PRICE</th>
+            <th style="width: 10%;">STATUS</th>
+            <th style="width: 10%;">ACTIONS</th>
+          </tr>
+        </thead>
+        <hr>
+        <tbody>
+          <tr>
+            <td style="width: 5%;"></td>
+            <td style="width: 10%;"></td>
+            <td style="width: 15%;"></td>
+            <td style="width: 10%;"></td>
+            <td style="width: 10%;"></td>
+            <td style="width: 10%;"></td>
+            <td style="width: 10%;"></td>
+            <td style="width: 10%;"></td>
+            <td style="width: 10%;"></td>
+          </tr>
+          <%console.log(products)%>
+          <%products.forEach((product,index)=>{%>
+          <tr>
+            <td style="width: 5%;"><%=index+1%></td>
+            <td style="width: 10%;"><details>
+              <summary>Images</summary>
+              <div class="">
+                <%product.img.forEach(imgs=>{%>
+                  <img src="../images/uploads/<%=imgs%>" alt="">
+                <%})%>
+            </div>
+            </details></td>
+            <td style="width: 10%;"><details>
+              <summary>Category</summary><div>
+                <%product.category.forEach(cat=>{%>
+                  <p><%=cat%></p>
+                <%})%>
+                </div></details></td>
+            <td style="width: 15%;"><%=product.title%></td>
+            <td style="width: 10%;" ><details>
+              <summary>Size</summary><div>
+                <%product.size.forEach(cat=>{%>
+                  <p><%=cat%></p>
+                <%})%>
+              </div></details></td>
+            <td style="width: 10%;" ><details>
+              <summary>COLOR</summary><div>
+                <%product.color.forEach(cat=>{%>
+                  <p><%=cat%></p>
+                <%})%>
+              </div></details></td>
+            <td style="width: 10%;"><%=product.price%></th>
+            <td style="width: 10%;"><div class="stock"><%=product.inStock===true?"Instock":"Nostock"%></div></th>
+            <td style="width: 10%;"><a href="/admin/product/update/<%=product._id%>">Update</a> </div>
+            </details></td>
+          </tr>
+          
+        <%})%>
+        </tbody>
+        </table>
+      </aside>
+    </div>
+    <script>
+      function clicks() {
+        console.log(this,"h")
+      }
+    </script>
+  </body>
+</html>
