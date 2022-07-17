@@ -27,10 +27,10 @@ var swiper = new Swiper(".mySwiper", {
   },
   allowTouchMove: false,
   loop: true,
-  autoplay: {
-    delay: 1500,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 1500,
+  //   disableOnInteraction: false,
+  // },
 });
 
 var swiper2 = new Swiper(".mySwiper2", {
@@ -38,10 +38,10 @@ var swiper2 = new Swiper(".mySwiper2", {
   grabCursor: false,
   loop: true,
   freeMode: true,
-  autoplay: {
-    delay: 1500,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 1500,
+  //   disableOnInteraction: false,
+  // },
 });
 var swiper3 = new Swiper(".mySwiper3", {
   slidesPerView: 4,
@@ -53,9 +53,9 @@ var swiper3 = new Swiper(".mySwiper3", {
   loop: true,
   loopFillGroupWithBlank: true,
   freeMode: true,
-  autoplay: {
-    delay: 1500,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 1500,
+  //   disableOnInteraction: false,
+  // },
 });
 // function

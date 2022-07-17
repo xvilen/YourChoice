@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/javascripts/fontawesome.js"></script>
-    <script
-      src="/javascripts/swipper.js"></script>
+    <script src="/javascripts/swipper.js"></script>
 
     <link rel="stylesheet" href="/stylesheets/favorite.css" />
     <link rel="stylesheet" href="/stylesheets/navbar.css" />
@@ -14,16 +13,16 @@
     <link rel="stylesheet" href="/stylesheets/footer.css" />
     <link rel="stylesheet" href="/stylesheets/newsbar.css" />
     <link rel="stylesheet" href="/stylesheets/universal.css" />
-    <link rel="stylesheet" href="/stylesheets/profile.css">
-    <link rel="stylesheet" href="/stylesheets/swipper.css">
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+    <link rel="stylesheet" href="/stylesheets/swipper.css" />
 
     <title>YourChoice</title>
   </head>
   <body>
     <i class="on-off fa-solid fa-toggle-off"></i>
-    <%- include('Header/Profile')%>
+    <%- include('component/Profile')%>
     <div class="container">
-      <%- include('Header/Navbar')%>
+      <%- include('component/Navbar')%>
       <div class="Landing-Screen">
         <div class="Backside-card-body">
           <div class="Backside-card">
@@ -44,132 +43,64 @@
               <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                   <%if(user.wishlist.length>0){user.wishlist.forEach((product)=>{%>
-                    <div class="swiper-slide swiper-slide3 product-card">
-                      <div class="nav">
-                        <a
-                          class="icon"
-                          href="/user/unlike/<%=product._id%>"
-                        >
-                          <i class="fa-solid fa-trash"></i>
-                        </a>
-                        <div class="icon">
-                          <i class="fa-solid nav-ic fa-bag-shopping"></i>
-                        </div>
-                      </div>
-                      <div class="product">
-                        <div class="product-background" style="background: rgb(<%=Math.round(250*Math.random())%>,<%=Math.round(250*Math.random())%>,<%=Math.round(250*Math.random())%>)">
-                          <div class="product-background-circle"></div>
-                        </div>
-                        <div class="product-image">
-                          <img src="../images/uploads/<%=product.PngImg%>" alt="" />
-                        </div>
-                      </div>
-                      <div class="product-info">
-                        <h3><%=product.title%></h3>
-                        <h4>$<%=product.price%></h4>
-                        <a href="/product/singleproduct?id=<%=product._id%>"
-                          ><button>view <i class="fa-solid fa-expand"></i></button
-                        ></a>
+                  <div class="swiper-slide swiper-slide3 product-card">
+                    <div class="nav">
+                      <a class="icon" href="/user/unlike/<%=product._id%>">
+                        <i class="fa-solid fa-trash"></i>
+                      </a>
+                      <div class="icon">
+                        <i class="fa-solid nav-ic fa-bag-shopping"></i>
                       </div>
                     </div>
+                    <div class="product">
+                      <div
+                        class="product-background"
+                        style="
+                          background: rgb(
+                            <%=Math.round(250 * Math.random()) %>,
+                            <%=Math.round(250 * Math.random()) %>,
+                            <%=Math.round(250 * Math.random()) %>
+                          );
+                        "
+                      >
+                        <div class="product-background-circle"></div>
+                      </div>
+                      <div class="product-image">
+                        <img
+                          src="../images/uploads/<%=product.PngImg%>"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h3><%=product.title%></h3>
+                      <h4>$<%=product.price%></h4>
+                      <a href="/product/singleproduct?id=<%=product._id%>"
+                        ><button>view <i class="fa-solid fa-expand"></i></button
+                      ></a>
+                    </div>
+                  </div>
                   <%})}else{%>
-                    <h4 style="display: flex; justify-content: center; align-items: center;
-                    width: 100%;  height: 50%;">please add product to wishlist</h4>
+                  <h4
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      width: 100%;
+                      height: 50%;
+                    "
+                  >
+                    please add product to wishlist
+                  </h4>
                   <%}%>
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
+            </div>
           </div>
         </div>
       </div>
-</div>
-      <div class="newslatter">
-        <h1>NEWSLATTER</h1>
-        <h4>Get update from your favorite products</h4>
-        <form action="/newsemail" method="post">
-          <input type="text" placeholder="enter your email" />
-          <button type="submit">Send</button>
-        </form>
-      </div>
-      <footer class="Footer" id="footer">
-        <div class="footer-info">
-          <h2>MUHAFIZ.</h2>
-          <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don’t look even slightly
-            believable.
-          </p>
-          <div class="social-icon">
-            <a href="">
-              <i
-                style="color: #3b5999"
-                class="fa-brands fa-facebook-square"
-              ></i>
-            </a>
-            <a href="">
-              <i
-                style="color: #e4405f"
-                class="fa-brands fa-instagram-square"
-              ></i>
-            </a>
-            <a href="">
-              <i style="color: #55acee" class="fa-brands fa-twitter-square"></i>
-            </a>
-            <a href="">
-              <i
-                style="color: #e60023"
-                class="fa-brands fa-pinterest-square"
-              ></i>
-            </a>
-          </div>
-        </div>
-        <div class="Usefull-Links">
-          <h2>Usefull Links</h2>
-          <ul>
-            <li>
-              <a href="/"> Home </a>
-            </li>
-            <li>
-              <a href="/cart/usercart"> Cart </a>
-            </li>
-            <li>
-              <a href="/product?category=Men"> Man Fashion </a>
-            </li>
-            <li>
-              <a href="/product?category=Women"> Woman Fashion </a>
-            </li>
-            <li>
-              <a href="/product?category=Accessories"> Accessories </a>
-            </li>
-            <li>
-              <a href="/product?category=Accessories"> My Account </a>
-            </li>
-            <li>
-              <a href="/product?category=Accessories"> Order Tracking </a>
-            </li>
-            <li>
-              <a href="/product?category=Accessories"> Wishlist </a>
-            </li>
-            <li>
-              <a href="/product?category=Accessories"> Wishlist </a>
-            </li>
-            <li>
-              <a href="/product?category=Accessories"> Terms </a>
-            </li>
-          </ul>
-        </div>
-        <div class="Contact">
-          <h2>Contact</h2>
-          <div>
-            <i class="fa-solid fa-location-pin"></i>
-            622 Dixie Path , South Tobinchester 98336
-          </div>
-          <div><i class="fa-solid fa-phone"></i>+91 7869073804</div>
-          <div><i class="fa-solid fa-at"></i>Muhafiz.ahmed.sa@gmail.com</div>
-          <img src="https://i.ibb.co/Qfvn4z6/payment.png" />
-        </div>
-      </footer>
+      <%- include('component/newslatter')%> <%- include('component/Footer')%>
     </div>
     <script>
       const increment = async (action, id) => {
@@ -221,17 +152,17 @@
           "navcart"
         ).innerHTML = ` <i class="fa-solid fa-indian-rupee-sign"></i>${resquantity.totalprice}`;
       };
-      let profile=document.querySelector(".profile-cont")
+      let profile = document.querySelector(".profile-cont");
 
-profile.addEventListener("click",function () {
-  profile.classList.toggle("profile-active")
-  
-})
-document.querySelector("#profile-cont-off").addEventListener("click",function () {
-  profile.classList.toggle("profile-active")
-
-})
-var swiper = new Swiper(".mySwiper", {
+      profile.addEventListener("click", function () {
+        profile.classList.toggle("profile-active");
+      });
+      document
+        .querySelector("#profile-cont-off")
+        .addEventListener("click", function () {
+          profile.classList.toggle("profile-active");
+        });
+      var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
         spaceBetween: 30,
         pagination: {

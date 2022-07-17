@@ -1,0 +1,44 @@
+@media only screen and (max-width: 400px) {
+  .navMid {
+    display: none;
+  }
+  .navRight {
+    display: none;
+  }
+  .Backside-card .Backside-card-Mid {
+    display: none;
+  }
+  .Backside-card .Backside-card-Right {
+    display: none;
+  }
+  .main-body .scroll-to-down {
+    display: none;
+  }
+  .main-body .social-button-body {
+    display: none;
+  }
+  .mySwiper .swiper-wrapper {
+    padding: 0px 0px;
+  }
+  .product-desc {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+  }
+  .CATEGORY {
+    width: 100vw;
+    height: 210vh;
+  }
+  .CATEGORY .cat-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cat-container .cat-container-box-1 {
+    height: 100%;
+    width: 100%;
+  }
+  footer {
+    flex-direction: column;
+  }
+}

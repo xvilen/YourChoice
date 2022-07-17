@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="/stylesheets/newsbar.css" />
     <link rel="stylesheet" href="/stylesheets/universal.css" />
     <link rel="stylesheet" href="/stylesheets/profile.css" />
-
+    <link rel="stylesheet" href="/stylesheets/responsive/index.css" />
     <title>YourChoice</title>
   </head>
   <body class="flexCenter">
     <i class="on-off fa-solid fa-toggle-off"></i>
-    <%- include('Header/Profile')%>
+    <%- include('component/Profile')%>
     <div class="container">
-      <%- include('Header/Navbar')%>
+      <%- include('component/Navbar')%>
       <div class="Landing-Screen">
         <div class="Backside-card-body">
           <div class="Backside-card">
@@ -201,15 +201,7 @@
           <div class="swiper-pagination"></div>
         </div>
       </div>
-      <div class="newslatter">
-        <h1>NEWSLATTER</h1>
-        <h4>Get update from your favorite products</h4>
-        <form action="/newsemail" method="post">
-          <input type="text" placeholder="enter your email" />
-          <button type="submit">Send</button>
-        </form>
-      </div>
-      <%- include('Footer/Footer')%>
+      <%- include('component/newslatter')%> <%- include('component/Footer')%>
     </div>
     <!-- Initialize Swiper -->
     <script></script>
