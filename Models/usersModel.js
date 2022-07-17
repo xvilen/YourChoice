@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/YourChoice", () => {
-  console.log("connected");
-});
-// mongoose.connect(process.env.MONGO_URL, () => {
+// mongoose.connect("mongodb://localhost:27017/YourChoice", () => {
 //   console.log("connected");
 // });
+mongoose.connect(process.env.MONGO_URL, () => {
+  console.log("connected");
+});
 
 const addressSchema = mongoose.Schema({
   address: {

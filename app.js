@@ -16,15 +16,15 @@ var AdminRouter = require("./routes/adminRouts");
 var AuthRouter = require("./routes/authRouts");
 
 var app = express();
-const sessionStore = new MongoStore({
-  mongoUrl: process.env.MONGO_URL2,
-  collectionName: "session",
-});
+// const sessionStore = new MongoStore({
+//   mongoUrl: process.env.MONGO_URL2,
+//   collectionName: "session",
+// });
 app.use(
   expresSession({
     resave: false,
     saveUninitialized: false,
-    store: sessionStore,
+    // store: sessionStore,
     secret: process.env.SESSION_SECRATE,
     cookie: {
       maxAge: 24 * 60 * 60 * 100,
