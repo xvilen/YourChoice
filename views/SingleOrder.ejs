@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/javascripts/fontawesome.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+      integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link rel="stylesheet" href="/stylesheets/Singleorder.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/backside.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link rel="stylesheet" href="/stylesheets/newsbar.css" />
+    <link rel="stylesheet" href="/stylesheets/universal.css" />
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+
+    <title>YourChoice</title>
+  </head>
+  <body>
+    <i class="on-off fa-solid fa-toggle-off"></i>
+    <%- include('component/Profile')%>
+    <div class="container">
+      <%- include('component/Navbar')%>
+      <div class="Landing-Screen">
+        <div class="Backside-card-body">
+          <div class="Backside-card">
+            <div class="Backside-card-Left cursor">
+              <h5 id="pagelocation">YOUR CHOICE</h5>
+            </div>
+            <div class="Backside-card-Mid cursor">
+              <h1>ORDER DETAILS</h1>
+            </div>
+            <div class="Backside-card-Right">
+              <div class="nextproduct"></div>
+            </div>
+          </div>
+        </div>
+        <div class="main-body">
+          <div class="card-body">
+            <div class="card">
+              <div class="checkout-product-cont">
+                <h2><%=order.ProductName%></h2>
+                <div class="checkout-product-box">
+                    <div class="left">
+                        <small class="ShippinAddress">
+                            <h4>Shipping Address</h4>
+                            <h5>Muhafiz Ahmed</h5>
+                            <h5>muhafiz.ahmed.sa@gmail.com</h5>
+                            <h5>+917869073804</h5>
+                            <p> hari mazar</p>
+                           <p> housind board karond</p>
+                           <p> BHOPAL, MADHYA PRADESH 462038</p>
+                           <p> India</p>
+                        </small>
+                        <hr>
+                        <small class="SippinAddress">
+                            <h4>Shipping Type</h4>
+                            <h5>Free shipping</h5>
+                            <p>RS 0</p>
+                           <p> 5-7 Days</p>
+                        </small>
+                        <hr>
+                        <small class="SippinAddress">
+                            <h4>PaymentType=card</h4>
+                        </small>
+                    </div>
+                    <div class="middle">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/11vK2%2Bd8tXL._SX90_.jpg" alt="" srcset="">
+                        <div class="info">
+                            <h4>Color:Black</h4>
+                            <h4>Size:S</h4>
+                            <h4>Quantity:1</h4>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <small class="SippinAddress">
+                            <h4>Order Summary</h4>
+                            <h5>Item(s) Subtotal</h5>
+                            <p> 990</p>
+                            <h5>Shipping</h5>
+                            <p> 40</p>
+                            <h5>Total</h5>
+                            <p>1030</p>
+                            <h5>Promotion Applied</h5>
+                            <p>40</p>
+                            <h5>Grand Total</h5>
+                            <p>990</p>
+                        </small>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%- include('component/newslatter')%> <%- include('component/Footer')%>
+    </div>
+  </body>
+</html>

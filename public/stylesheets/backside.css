@@ -27,12 +27,14 @@
   height: 40%;
   align-items: center;
 }
+
 .Backside-card .Backside-card-Left {
   flex: 1;
   display: flex;
   align-items: center;
 }
 .Backside-card-Left h5 {
+  font-family: "Edu VIC WA NT Beginner", cursive;
   margin-left: 50px;
 }
 .Backside-card .Backside-card-Mid {
@@ -41,6 +43,9 @@
   justify-content: center;
   align-items: center;
 }
+.Backside-card .Backside-card-Mid h1 {
+  font-family: EliantoReg;
+}
 .Backside-card .Backside-card-Right {
   flex: 1;
 }
@@ -48,6 +53,13 @@
   display: flex;
   justify-content: space-evenly;
   width: 75%;
+}
+.Backside-card-Right .nextproduct h4 {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  /* font-family: Ailerons; */
+  /* font-family: AnuratiReg; */
+  /* font-family: BlankaReg; */
+  /* font-family: ELIXIA; */
 }
 .arrow {
   display: flex;

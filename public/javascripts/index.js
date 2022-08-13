@@ -1,6 +1,22 @@
 let profile = document.querySelector(".profile-cont");
 let profileoff = document.querySelector("#profile-cont-off");
 let swipeDown = document.querySelector(".scroll-to-down");
+let rightSwipperArrow = document.querySelector("#swiper-button-next");
+let leftSwipperArrow = document.querySelector("#swiper-button-prev");
+let rightIconArrow = document.querySelector("#fa-arrow-right-long");
+let leftIconArrow = document.querySelector("#fa-arrow-left-long");
+rightIconArrow.addEventListener("click", () => {
+  rightSwipperArrow.click();
+});
+leftIconArrow.addEventListener("click", () => {
+  leftSwipperArrow.click();
+});
+rightSwipperArrow.addEventListener("click", () => {
+  console.log("first2");
+});
+leftSwipperArrow.addEventListener("click", () => {
+  console.log("second");
+});
 
 profile.addEventListener("click", function () {
   profile.classList.toggle("profile-active");
@@ -27,10 +43,10 @@ var swiper = new Swiper(".mySwiper", {
   },
   allowTouchMove: false,
   loop: true,
-  // autoplay: {
-  //   delay: 1500,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
 });
 
 var swiper2 = new Swiper(".mySwiper2", {
@@ -38,10 +54,10 @@ var swiper2 = new Swiper(".mySwiper2", {
   grabCursor: false,
   loop: true,
   freeMode: true,
-  // autoplay: {
-  //   delay: 1500,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
 });
 var swiper3 = new Swiper(".mySwiper3", {
   slidesPerView: 4,
@@ -53,9 +69,9 @@ var swiper3 = new Swiper(".mySwiper3", {
   loop: true,
   loopFillGroupWithBlank: true,
   freeMode: true,
-  // autoplay: {
-  //   delay: 1500,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
 });
 // function

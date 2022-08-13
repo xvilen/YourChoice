@@ -55,6 +55,9 @@
   align-items: center;
   gap: 17px;
 }
+.checkout-product-cont .checkout-product:hover {
+  box-shadow: inset 0px 0px 10px blue;
+}
 .checkout-product img {
   width: 195px;
   height: 100%;
@@ -102,4 +105,7 @@
 }
 .delivery-status {
   flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }

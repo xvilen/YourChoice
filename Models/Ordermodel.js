@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const cart = require("./cartModel");
 
-const Cartmodel = mongoose.Schema(
+const Ordermodel = mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -28,18 +28,62 @@ const Cartmodel = mongoose.Schema(
     ProductQuantity: {
       type: Number,
     },
-    ProductPrice: {
+    ProductSubtotal: {
       type: Number,
     },
-    OrderStatus: {
-      type: String,
-      default: "Ordered",
+    ProductDiscount: {
+      type: Number,
     },
-    Address: {
+    ProductTotal: {
+      type: Number,
+    },
+    ProductUnitAmount: {
+      type: Number,
+    },
+    PaymentType: {
+      type: String,
+    },
+    OrderStatus: {
+      OrderConfirmed: {
+        type: Boolean,
+        default: true,
+      },
+      Shipped: {
+        type: Boolean,
+        default: false,
+      },
+      OutForDelivery: {
+        type: Boolean,
+        default: false,
+      },
+      Delivered: {
+        type: Boolean,
+        default: false,
+      },
+    },
+    CustomerEmail: {
+      type: String,
+      required: true,
+    },
+    CustomerName: {
+      type: String,
+      required: true,
+    },
+    CustomerNumber: {
+      type: String,
+      required: true,
+    },
+    ShippingAddress: {
       type: Object,
       required: true,
+    },
+    ShippingType: {
+      ShippingTitle: String,
+      ShippingAmount: Number,
+      MinimumDays: Number,
+      MaximumDays: Number,
     },
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("carts", Cartmodel);
+module.exports = mongoose.model("orders", Ordermodel);

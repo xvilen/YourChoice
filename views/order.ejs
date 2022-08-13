@@ -47,27 +47,36 @@
               <div class="checkout-product-cont">
                 <h2>PRODUCTS</h2>
                 <div class="checkout-product-box">
-                  <div class="checkout-product" id="">
-                    <img src="" alt="" />
-                    <h2>dfdsf</h2>
+                  <%user.orders.forEach((order)=>{%>
+                      <a href="/user/order/<%=order._id%>" class="checkout-product" id="">
+                    <img src="../images/uploads/<%=order.ProductImg%>" alt="" />
+                    <h2><%=order.ProductName%></h2>
                     <div class="product-colors">
                       <h2>color:</h2>
-                      <div class="color" style="background: tan"></div>
+                      <div class="color" style="background: <%=order.ProductColor%>"></div>
                     </div>
                     <div class="product-size">
                       <h2>SIZE:</h2>
-                      <div class="size"></div>
+                      <div class="size"><%=order.ProductSize%></div>
                     </div>
 
                     <div class="product-price">
                       <i class="fa-solid fa-indian-rupee-sign"></i>
-                      <h2>23</h2>
+                      <h2><%=order.ProductTotal%></h2>
                     </div>
                     <div class="delivery-status">
-                      <h3>Delivery Status</h3>
-                      <div class="status-cont"></div>
+                      <h3>Status :</h3>
+                      <div class="status-cont">
+                        <%Object.keys(order.OrderStatus).forEach((key)=>{%>
+                        <%if(order.OrderStatus[key]){%>
+                            <h4><%=key%></h4>
+                        <%}%>
+                        
+                      <%})%></div>
                     </div>
-                  </div>
+                  </a>
+                  <%})%>
+                
                 </div>
               </div>
             </div>
@@ -77,66 +86,6 @@
 
       <%- include('component/newslatter')%> <%- include('component/Footer')%>
     </div>
-    <script>
-      const increment = async (action, id) => {
-        let quantitycode = document.getElementById(id);
-        let badge = document.querySelector(".badge");
-        quantity = await axios.get(`/cart/quantity?val=${action}&id=${id}`);
-        let res = quantity.data.quantities;
-        if (res.ProductQuantity > 0) {
-          quantitycode.innerHTML = `
-                    <img src="../images/uploads/${res.ProductImg}" alt="" />
-                    <h2>${res.ProductName}"</h2>
-                    <div class="product-colors">
-                      <h2>color:</h2>
-                      <div
-                        class="color"
-                        style="background: ${res.ProductColor}"
-                      ></div>
-                    </div>
-                    <div class="product-size">
-                      <h2>SIZE:</h2>
-                      <div class="size">${res.ProductSize}</div>
-                    </div>
-                    <div class="product-quantity">
-                      <i
-                        class="fa-solid fa-plus"
-                        onclick="increment('inc','${res._id}')"
-                      ></i>
-                      <div class="size">${res.ProductQuantity}</div>
-                      <i
-                        class="fa-solid fa-minus"
-                        onclick="increment('dec','${res._id}')"
-                      ></i>
-                    </div>
-                    <div class="product-price">
-                      <i class="fa-solid fa-indian-rupee-sign"></i>
-                      <h2>${res.ProductPrice}</h2>
-                    </div>
-                  `;
-        } else {
-          quantitycode.parentElement.removeChild(quantitycode);
-          badge.innerText -= 1;
-        }
 
-        let resquantity = quantity.data.totalprice;
-        let totalprice = document.querySelector(".checkout-price").children;
-        totalprice[1].children[1].innerHTML = ` <i class="fa-solid fa-indian-rupee-sign"></i>${resquantity.totalprice}`;
-        totalprice[4].children[1].innerHTML = ` <i class="fa-solid fa-indian-rupee-sign"></i>${resquantity.totalprice}`;
-        document.getElementById(
-          "navcart"
-        ).innerHTML = ` <i class="fa-solid fa-indian-rupee-sign"></i>${resquantity.totalprice}`;
-      };
-      let profile = document.querySelector(".profile-cont");
-
-      profile.addEventListener("click", function () {
-        profile.classList.toggle("profile-active");
-      });
-      document
-        .querySelector("#profile-cont-off")
-        .addEventListener("click", function () {
-          profile.classList.toggle("profile-active");
-        });
-    </script>
   </body>
 </html>

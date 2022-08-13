@@ -29,6 +29,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.1.2",
     "razorpay": "^2.8.1",
+    "stripe": "^9.13.0",
     "webp-converter": "^2.3.3"
   }
 }

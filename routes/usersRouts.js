@@ -1,6 +1,7 @@
 // LINK all required stuff
 var express = require("express");
 const Productmodel = require("../Models/ProductModel");
+const Ordermodel = require("../Models/Ordermodel");
 const Usermodel = require("../Models/usersModel");
 const Cartmodel = require("../Models/cartModel");
 const usersModel = require("../Models/usersModel");
@@ -91,20 +92,37 @@ router.get("/unlike/:id", isLoggedIn, async (req, res) => {
 router.get("/cart", (req, res) => {
   res.redirect("http://localhost:3000/cart/usercart");
 });
-router.get("/order", async (req, res) => {
+router.get("/order", isLoggedIn, async (req, res) => {
   try {
     let user;
     user = await usersModel
       .findOne({ username: req.session.passport.user })
-      .populate("wishlist");
+      .populate("orders");
     let totalprice = await totalPrice(user.cart);
     if (totalprice.length === 0) {
       totalprice = [{ _id: null, totalprice: 0 }];
     }
     res.render("order", { user, totalprice: totalprice[0] });
   } catch (error) {
-    res.send(error);
+    // res.send(error);
+    console.log(error);
   }
 });
 
+router.get("/order/:id", isLoggedIn, async (req, res) => {
+  try {
+    let user;
+    user = await usersModel.findOne({ username: req.session.passport.user });
+    let order = await Ordermodel.findOne({ _id: req.params.id });
+    let totalprice = await totalPrice(user.cart);
+    if (totalprice.length === 0) {
+      totalprice = [{ _id: null, totalprice: 0 }];
+    }
+    console.log(order);
+    res.render("SingleOrder", { user, order, totalprice: totalprice[0] });
+  } catch (error) {
+    // res.send(error);
+    console.log(error);
+  }
+});
 module.exports = router;

@@ -10,10 +10,21 @@
   height: 50vh;
   gap: 30px;
 }
+.newslatter h1 {
+  font-family: Ailerons;
+  /* font-family: AnuratiReg; */
+  /* font-family: BlankaReg; */
+  /* font-family: ELIXIA; */
+  letter-spacing: -3px;
+}
 .newslatter h4 {
   letter-spacing: 4px;
   font-size: 20px;
   font-weight: 900;
+  /* font-family: Ailerons; */
+  /* font-family: AnuratiReg; */
+  /* font-family: BlankaReg; */
+  font-family: ELIXIA;
 }
 .newslatter form {
   display: flex;
@@ -26,12 +37,14 @@
   border: none;
   text-align: center;
   border-radius: 10px;
+  font-family: ELIXIA;
+
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
 .newslatter form button {
   background: black;
-  width: 70px;
+  width: 100px;
   height: 40px;
   border: none;
   text-align: center;

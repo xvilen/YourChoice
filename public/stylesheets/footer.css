@@ -2,6 +2,13 @@ footer {
   margin-top: 35px;
   display: flex;
 }
+footer h2 {
+  /* font-family: Ailerons; */
+  /* font-family: AnuratiReg; */
+  font-family: BlankaReg;
+  letter-spacing: 4px;
+  /* font-family: ELIXIA; */
+}
 footer .footer-info {
   flex: 1;
   display: flex;
@@ -47,4 +54,9 @@ footer .Contact {
   width: 50%;
   margin-bottom: 10px;
   text-align: center;
+}
+footer p,
+footer a,
+footer .Contact div {
+  font-family: "Edu VIC WA NT Beginner", cursive;
 }

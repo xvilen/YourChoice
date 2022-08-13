@@ -22,8 +22,7 @@ router.post(
         res.redirect(req.headers.referer);
       } else {
         let salt = await bcrypt.genSalt(10);
-        let hash = await bcrypt.hash(req.body.password, salt);
-        user.password = hash;
+        user.password= await bcrypt.hash(req.body.password, salt);
         user.number = req.body.number;
         await user.save();
       }

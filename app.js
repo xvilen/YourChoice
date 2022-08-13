@@ -14,10 +14,11 @@ const cartRouter = require("./routes/cartRouts");
 var indexRouter = require("./routes/indexRouts");
 var AdminRouter = require("./routes/adminRouts");
 var AuthRouter = require("./routes/authRouts");
+var PaymentRouter = require("./routes/paymentRouter");
 
 var app = express();
 // const sessionStore = new MongoStore({
-//   mongoUrl: process.env.MONGO_URL2,
+//   mongoUrl: process.env.MONGO_URL,
 //   collectionName: "session",
 // });
 app.use(
@@ -50,6 +51,7 @@ app.use("/product", productRouter);
 app.use("/cart", cartRouter);
 app.use("/admin", AdminRouter);
 app.use("/auth", AuthRouter);
+app.use("/payment", PaymentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

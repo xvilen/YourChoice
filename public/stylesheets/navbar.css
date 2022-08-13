@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap");
+@font-face {
+  font-family: Ailerons;
+  src: url("../Fonts/ailerons/Ailerons-Typeface.otf");
+}
+@font-face {
+  font-family: AnuratiReg;
+  src: url("../Fonts/anurati-free-font/ANURATI/AnuratiReg.otf");
+}
+@font-face {
+  font-family: BlankaReg;
+  src: url("../Fonts/BLANKA-Free-Font-ER/BLANKA/Blanka-Regular.otf");
+}
+@font-face {
+  font-family: EliantoReg;
+  src: url("../Fonts/Elianto-typeface/Elianto-Regular.otf");
+}
+@font-face {
+  font-family: ELIXIA;
+  src: url("../Fonts/Elixia_Free_Font/ELIXIA.ttf");
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -26,7 +48,17 @@ nav .icon {
   font-size: x-large;
   font-weight: 900;
 }
-
+.navLeft h2 a {
+  font-family: "Finger Paint", cursive;
+  /* font-family: Ailerons; */
+  /* font-family: AnuratiReg; */
+  /* font-family: BlankaReg; */
+  /* font-family: EliantoReg; */
+  /* font-family: ELIXIA; */
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
 .navMid {
   flex: 1;
   display: flex;
@@ -34,6 +66,7 @@ nav .icon {
   align-items: center;
 }
 .navMid .navitem {
+  font-family: "Edu VIC WA NT Beginner", cursive;
   font-weight: 900;
   cursor: pointer;
 }
@@ -56,6 +89,7 @@ nav .icon {
   justify-content: center;
 }
 .navRight .search input {
+  font-family: "Edu VIC WA NT Beginner", cursive;
   padding: 5px 5px;
   width: 150px;
   border: none;
@@ -73,6 +107,7 @@ nav .icon {
 .cart h4 {
   margin-right: 20px;
   font-weight: 900;
+  font-family: "Edu VIC WA NT Beginner", cursive;
 }
 .cart .icon {
   position: relative;

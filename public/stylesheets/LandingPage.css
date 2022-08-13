@@ -42,6 +42,7 @@
   height: 200%;
   position: absolute;
   bottom: 25px;
+  overflow: hidden;
   background-color: #ffebc2;
   border-radius: 50px;
   box-shadow: 0px -4px 9px 0px white, 0px 4px 9px 0px black;
@@ -83,6 +84,21 @@
   gap: 25px;
   position: relative;
 }
+.product-desc h1 {
+  font-family: Ailerons;
+  /* font-family: AnuratiReg; */
+  /* font-family: BlankaReg; */
+  /* font-family: ELIXIA; */
+}
+.product-desc h5 {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+}
+.product-desc p {
+  font-family: ELIXIA;
+  font-weight: 900;
+  font-size: 19px;
+  letter-spacing: 2px;
+}
 .product-desc .icon {
   position: absolute;
   top: 25px;
@@ -101,6 +117,13 @@
   align-items: center;
   gap: 10px;
 }
+.product-desc .price h2 {
+  font-family: Ailerons;
+  /* font-family: AnuratiReg; */
+  /* font-family: BlankaReg; */
+  /* font-family: ELIXIA; */
+  letter-spacing: -3px;
+}
 .product-desc button,
 button {
   width: 130px;
@@ -108,6 +131,9 @@ button {
   background: black;
   color: yellow;
   border-radius: 15px;
+  font-family: BlankaReg;
+  letter-spacing: 9px;
+  /* font-family: ELIXIA; */
 }
 .product-img {
   flex: 1;
@@ -124,7 +150,7 @@ button {
 .card .swiper-button-prev::after {
   content: "";
 }
-.card .swiper-button-next {
+/* .card .swiper-button-next {
   right: 49px;
   left: auto;
   top: -39px;
@@ -133,7 +159,7 @@ button {
   right: 105px;
   left: auto;
   top: -39px;
-}
+} */
 .swiper-button-next .fa-solid {
   font-size: 25px;
   color: black;
@@ -151,7 +177,10 @@ button {
   gap: 15px;
   margin-bottom: 100px;
 }
-
+.CATEGORY > h1 {
+  text-align: center;
+  font-family: AnuratiReg;
+}
 .CATEGORY .cat-container {
   width: 100%;
   height: 100%;
@@ -191,6 +220,13 @@ button {
   flex-direction: column;
   gap: 20px;
 }
+.swiper-slide2 .cat-info h1 {
+  font-family: Ailerons;
+  /* font-family: AnuratiReg; */
+  /* font-family: BlankaReg; */
+  /* font-family: ELIXIA; */
+  letter-spacing: -3px;
+}
 .Top-Product {
   width: 100%;
   height: 90vh;
@@ -199,6 +235,9 @@ button {
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+.Top-Product > h1 {
+  font-family: AnuratiReg;
 }
 .sortcont {
   width: 100%;
@@ -302,4 +341,22 @@ a {
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.product-card .product-info h3 {
+  font-family: Ailerons;
+  /* font-family: AnuratiReg; */
+  /* font-family: BlankaReg; */
+  /* font-family: ELIXIA; */
+  letter-spacing: -3px;
+}
+.product-card .product-info h4 {
+  font-family: ELIXIA;
+  font-weight: 900;
+  font-size: 19px;
+  letter-spacing: 2px;
+}
+.product-card .product-info button {
+  width: 120px;
+  height: 30px;
 }

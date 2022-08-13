@@ -80,7 +80,7 @@ function ResultInjector(data) {
   });
   clustor !== undefined
     ? (clustor = clustor.replace("undefined", ""))
-    : (clustor = "<h4><b>Sorry cant find what you looking for</b></h4>");
+    : (clustor = `<b style="font-family: 'BlankaReg';letter-spacing: 2px;">Sorry cant find what you looking for</b>`);
 
   productCont.innerHTML = clustor;
 }

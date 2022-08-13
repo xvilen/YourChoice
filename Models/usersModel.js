@@ -23,23 +23,6 @@ const addressSchema = mongoose.Schema({
     type: String,
   },
 });
-const orderSchema = mongoose.Schema({
-  address: {
-    type: String,
-  },
-  city: {
-    type: String,
-  },
-  country: {
-    type: String,
-  },
-  pincode: {
-    type: Number,
-  },
-  addressType: {
-    type: String,
-  },
-});
 const Usermodel = mongoose.Schema(
   {
     img: {
@@ -57,6 +40,7 @@ const Usermodel = mongoose.Schema(
       default: false,
     },
     cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "carts" }],
+    orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "orders" }],
     wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: "products" }],
     address: {
       type: addressSchema,

@@ -27,7 +27,9 @@
       ><input type="text" id="navsearch" placeholder="search" />
     </div>
     <div class="cart">
-      <h4 id="navprice">$<%=totalprice.totalprice%></h4>
+      <h4 id="navprice">
+        <i class="fa-solid fa-indian-rupee-sign"></i> <%=totalprice.totalprice%>
+      </h4>
       <a class="icon" href="/cart/usercart">
         <%if(user){%>
         <div class="badge"><%=user.cart.length%></div>
